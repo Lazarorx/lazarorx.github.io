@@ -118,7 +118,7 @@
 
     <nav>
         <div class="logo">
-            <img src="Logo1.png" alt="Logo Aulas Particulares">
+            <img src="logo 1.png" alt="Logo Aulas Particulares">
             <a href="#main">Aulas Particulares</a>
         </div>
         <ul>
@@ -319,10 +319,10 @@
     <footer>
         <div class="top">
             <div class="logo">
-                <img src="Logo1.png" alt="Logo Aulas Particulares">
+                <img src="logo 1.png" alt="Logo Aulas Particulares">
                 <a href="#main">Aulas Particulares</a>
             </div>
-            <ul>               
+            <ul>
                 <ul>
                     <li><a href="#main">Home</a></li>
                     <li><a href="#contact">Contato</a></li>
@@ -358,7 +358,7 @@
                     contactForm.classList.add("show");
                 }, 10);
             }
-    
+        
             function closeContactForm() {
                 var contactForm = document.getElementById("contactForm");
                 // Adicionado para remover a classe 'show' antes de ocultar
@@ -368,14 +368,44 @@
                     contactForm.style.display = "none";
                 }, 300);
             }
-    
-            function validateContactForm() {
-                // Adicione lógica de validação aqui, se necessário
-                return true; // Retorne false se o formulário não for válido
+        
+            function showMessage(type, message) {
+                var messageElement = document.getElementById("message");
+                messageElement.textContent = message;
+                messageElement.classList.add(type);
+        
+                setTimeout(function () {
+                    messageElement.textContent = "";
+                    messageElement.classList.remove(type);
+                }, 3000);
             }
+        
+            function validateContactForm() {
+                // Lógica de validação
+        
+                // Exemplo: Verifique se o campo de nome está preenchido
+                var name = document.getElementById("name").value;
+                if (name.trim() === "") {
+                    showMessage('error', 'Por favor, preencha o campo de Nome.');
+                    return false;
+                }
+        
+                // Adicione mais lógica de validação conforme necessário
+        
+                return true; // Retorne true se a validação for bem-sucedida
+            }
+        
+            document.getElementById("submitBtn").addEventListener("click", function () {
+                if (validateContactForm()) {
+                    // Se a validação for bem-sucedida, exiba mensagem de sucesso
+                    showMessage('success', 'Mensagem enviada com sucesso!');
+                    // Adicione aqui a lógica para enviar os dados do formulário para o servidor (backend)
+                } else {
+                    // Se a validação falhar, exiba mensagem de erro
+                    showMessage('error', 'Por favor, corrija os erros no formulário.');
+                }
+            });
         </script>
-    
-    </body>
-    
-    </html>
-    
+        </body>
+        </html>
+        
