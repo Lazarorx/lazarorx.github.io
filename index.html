@@ -8,109 +8,186 @@
     <meta name="keywords" content="aulas particulares, português, redação, concursos, enem, educação">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="style.css">
+
     <style>
         /* Estilos para o formulário de contato */
-        .contact-form {
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            display: none;
-            position: absolute;
-            top: 80px;
-            right: 20px;
-            transform: translateX(100%);
-            transition: transform 0.3s ease-in-out;
-            opacity: 0;
-            pointer-events: none;
-        }
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: none;
+    position: absolute;
+    top: 80px;
+    right: 20px;
+    transform: translateX(100%);
+    transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
+    opacity: 0;
+    pointer-events: none;
+}
 
-        .contact-form label {
-            display: block;
-            margin-bottom: 8px;
-        }
+.contact-form label {
+    display: block;
+    margin-bottom: 8px;
+}
 
-        .contact-form input,
-        .contact-form textarea {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 16px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            box-sizing: border-box;
-        }
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
 
-        .contact-form button {
-            background-color: #4caf50;
-            color: #fff;
-            padding: 10px 15px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #4caf50;
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+}
 
-        .contact-form button:hover {
-            background-color: #45a049;
-        }
+.contact-form button {
+    background-color: #4caf50;
+    color: #fff;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+    transform-style: preserve-3d;
+    transform: translateZ(0);
+}
 
-        .contact-form.show {
-            transform: translateX(0);
-            opacity: 1;
-            pointer-events: auto;
-        }
+.contact-form button:hover {
+    background-color: #45a049;
+    transform: translateZ(10px);
+}
 
-        .contact-form span.close {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            font-size: 24px;
-            cursor: pointer;
-            transition: transform 0.3s ease-in-out;
-        }
+.contact-form.show {
+    transform: translateX(0);
+    opacity: 1;
+    pointer-events: auto;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
 
-        .contact-form span.close:hover {
-            transform: scale(1.2);
-        }
+.contact-form span.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+.contact-form span.close:hover {
+    transform: scale(1.2);
+}
+
     </style>
-    <!-- Estilos Adicionados -->
+
     <style>
         /* Seção de Sobre a Professora */
         .about {
-            /* Adicione estilos relacionados à seção 'Sobre a Professora' aqui */
+            font-family: 'Poppins', sans-serif;
+            padding: 50px 0;
         }
 
         .about .left img {
-            /* Adicione estilos relacionados à imagem na seção 'Sobre a Professora' aqui */
+            /* ... */
         }
 
         .about .right h5,
         .about .right h3,
         .about .right p {
-            /* Adicione estilos relacionados ao texto na seção 'Sobre a Professora' aqui */
+            font-family: 'Poppins', sans-serif;
+            color: #2c3e50;
+            text-shadow: 1px 1px 1px #bdc3c7;
         }
 
         /* Seção de Experiência Profissional */
         .portfolio {
-            /* Adicione estilos relacionados à seção 'Experiência Profissional' aqui */
+            /* ... */
         }
 
         .portfolio .header h5,
-        .portfolio .header h3 {
-            /* Adicione estilos relacionados ao cabeçalho da seção 'Experiência Profissional' aqui */
-        }
-
+        .portfolio .header h3,
         .portfolio .portfo-items .item {
-            /* Adicione estilos relacionados aos itens na seção 'Experiência Profissional' aqui */
+            font-family: 'Poppins', sans-serif;
+            color: #2c3e50;
+            text-shadow: 1px 1px 1px #bdc3c7;
         }
 
         .portfolio .portfo-items .item img,
         .portfolio .portfo-items .item .info h4,
         .portfolio .portfo-items .item .info p {
-            /* Adicione estilos relacionados à imagem e informações na seção 'Experiência Profissional' aqui */
+            /* ... */
+        }
+
+        /* Estilos modernos para a seção "Aulas Particulares de Qualidade" */
+        .main .left h5,
+        .main .left h3,
+        .main .left p {
+            font-family: 'Poppins', sans-serif;
+            color: #2c3e50;
+            text-shadow: 1px 1px 1px #bdc3c7;
+        }
+
+        .main .right img {
+            border-radius: 8px;
+        }
+
+        /* Estilos modernos para a seção "Depoimentos dos Alunos" */
+        .feedback {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f8f9fa; /* Cor de fundo */
+            padding: 80px 0;
+        }
+
+        .feedback h5,
+        .feedback h3 {
+            color: #2c3e50;
+            text-align: center;
+        }
+
+        .customers .item {
+            background-color: #fff; /* Cor de fundo dos depoimentos */
+            padding: 20px;
+            margin: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .customers .item p {
+            color: #333;
+        }
+
+        .customers .item .rating {
+            color: #fdcc0d; /* Cor das estrelas */
+        }
+
+        .customers .item .user h5,
+        .customers .item .user p {
+            color: #777;
+        }
+
+        /* Estilos adicionados para "Disciplinas em Destaque" e "Confira Minha Trajetória" */
+        .skill-items h5,
+        .skill-items h3,
+        .portfolio .header h5,
+        .portfolio .header h3,
+        #skills h5,
+        #skills h3 {
+            font-family: 'Poppins', sans-serif;
+            color: #2c3e50;
+            text-shadow: 1px 1px 1px #bdc3c7;
         }
     </style>
+
     <title>Aulas Particulares - Larissa Rezende Marques Xavier</title>
 </head>
 
@@ -118,7 +195,7 @@
 
     <nav>
         <div class="logo">
-            <img src="Logo1.png" alt="Logo Aulas Particulares">
+            <img src="logo1.png" alt="Logo Aulas Particulares">
             <a href="#main">Aulas Particulares</a>
         </div>
         <ul>
@@ -319,93 +396,100 @@
     <footer>
         <div class="top">
             <div class="logo">
-                <img src="Logo1.png" alt="Logo Aulas Particulares">
+                <img src="logo1.png" alt="Logo Aulas Particulares">
                 <a href="#main">Aulas Particulares</a>
             </div>
             <ul>
-                <ul>
-                    <li><a href="#main">Home</a></li>
-                    <li><a href="#contact">Contato</a></li>
-                </ul>
-                <div class="social-links">
-                    <a href="#"><i class='bx bxl-facebook'></i></a>
-                    <a href="https://instagram.com/prof.larissamarques?igshid=OGQ5ZDc2ODk2ZA==" target="_blank"><i class='bx bxl-instagram'></i></a>
-                    <a href="#"><i class='bx bxl-google'></i></a>
-                    <a href="https://www.linkedin.com/in/larissa-rezende-marques-xavier-6b339946/" target="_blank"><i class='bx bxl-linkedin-square'></i></a>
-                </div>
+                <li><a href="#main">Home</a></li>
+                <li><a href="#contact">Contato</a></li>
+            </ul>
+            <div class="social-links">
+                <a href="#"><i class='bx bxl-facebook'></i></a>
+                <a href="https://instagram.com/prof.larissamarques?igshid=OGQ5ZDc2ODk2ZA==" target="_blank"><i class='bx bxl-instagram'></i></a>
+                <a href="#"><i class='bx bxl-google'></i></a>
+                <a href="https://www.linkedin.com/in/larissa-rezende-marques-xavier-6b339946/" target="_blank"><i class='bx bxl-linkedin-square'></i></a>
             </div>
-            <div class="separator"></div>
-            <div class="bottom">
-                <p>
-                    Feito com ❤️ por Lázaro Rafael Xavier
-                </p>
-                <div class="links">
-                    <a href="politicadeprivacidade.html" target="_blank">Política de Privacidade</a>
-                    <a href="termosdeservico.html" target="_blank">Termos de Serviço</a>
-                    <a href="configuracoesdecookies.html" target="_blank">Configurações de Cookies</a>
-                </div>
+        </div>
+        <div class="separator"></div>
+        <div class="bottom">
+            <p>
+                Feito com ❤️ por Lázaro Rafael Xavier
+            </p>
+            <div class="links">
+                <a href="politicadeprivacidade.html" target="_blank">Política de Privacidade</a>
+                <a href="termosdeservico.html" target="_blank">Termos de Serviço</a>
+                <a href="configuracoesdecookies.html" target="_blank">Configurações de Cookies</a>
             </div>
-        </footer>
-    
-        <script src="seu-arquivo-js.js"></script>
-    
-        <script>
-            function openContactForm() {
-                var contactForm = document.getElementById("contactForm");
-                contactForm.style.display = "block";
-                // Adicionado para exibir o formulário com a classe 'show'
-                setTimeout(function () {
-                    contactForm.classList.add("show");
-                }, 10);
+        </div>
+    </footer>
+
+    <script src="seu-arquivo-js.js"></script>
+
+    <script>
+        function openContactForm() {
+            var contactForm = document.getElementById("contactForm");
+            contactForm.style.display = "block";
+            // Adicionado para exibir o formulário com a classe 'show'
+            setTimeout(function () {
+                contactForm.classList.add("show");
+            }, 10);
+        }
+
+        function closeContactForm() {
+            var contactForm = document.getElementById("contactForm");
+            // Adicionado para remover a classe 'show' antes de ocultar
+            contactForm.classList.remove("show");
+            // Adicionado para ocultar o formulário após a animação
+            setTimeout(function () {
+                contactForm.style.display = "none";
+            }, 300);
+        }
+
+        function showMessage(type, message) {
+            var messageElement = document.getElementById("message");
+            messageElement.textContent = message;
+            messageElement.classList.add(type);
+
+            setTimeout(function () {
+                messageElement.textContent = "";
+                messageElement.classList.remove(type);
+            }, 3000);
+        }
+
+        function validateContactForm() {
+            // Lógica de validação
+
+            // Exemplo: Verifique se o campo de nome está preenchido
+            var name = document.getElementById("nome").value;
+            if (name.trim() === "") {
+                showMessage('error', 'Por favor, preencha o campo de Nome.');
+                return false;
             }
-        
-            function closeContactForm() {
-                var contactForm = document.getElementById("contactForm");
-                // Adicionado para remover a classe 'show' antes de ocultar
-                contactForm.classList.remove("show");
-                // Adicionado para ocultar o formulário após a animação
-                setTimeout(function () {
-                    contactForm.style.display = "none";
-                }, 300);
+
+            // Adicione mais lógica de validação conforme necessário
+
+            return true; // Retorne true se a validação for bem-sucedida
+        }
+
+        document.getElementById("submitBtn").addEventListener("click", function () {
+            if (validateContactForm()) {
+                // Se a validação for bem-sucedida, exiba mensagem                showMessage('success', 'Mensagem enviada com sucesso!');
             }
-        
-            function showMessage(type, message) {
-                var messageElement = document.getElementById("message");
-                messageElement.textContent = message;
-                messageElement.classList.add(type);
-        
-                setTimeout(function () {
-                    messageElement.textContent = "";
-                    messageElement.classList.remove(type);
-                }, 3000);
+        });
+
+        function openMenu() {
+            var menuButton = document.getElementById("menuButton");
+            var navLinks = document.querySelector("nav ul");
+
+            if (navLinks.style.display === "flex") {
+                navLinks.style.display = "none";
+            } else {
+                navLinks.style.display = "flex";
             }
-        
-            function validateContactForm() {
-                // Lógica de validação
-        
-                // Exemplo: Verifique se o campo de nome está preenchido
-                var name = document.getElementById("name").value;
-                if (name.trim() === "") {
-                    showMessage('error', 'Por favor, preencha o campo de Nome.');
-                    return false;
-                }
-        
-                // Adicione mais lógica de validação conforme necessário
-        
-                return true; // Retorne true se a validação for bem-sucedida
-            }
-        
-            document.getElementById("submitBtn").addEventListener("click", function () {
-                if (validateContactForm()) {
-                    // Se a validação for bem-sucedida, exiba mensagem de sucesso
-                    showMessage('success', 'Mensagem enviada com sucesso!');
-                    // Adicione aqui a lógica para enviar os dados do formulário para o servidor (backend)
-                } else {
-                    // Se a validação falhar, exiba mensagem de erro
-                    showMessage('error', 'Por favor, corrija os erros no formulário.');
-                }
-            });
-        </script>
-        </body>
-        </html>
-        
+        }
+    </script>
+</body>
+
+</html>
+
+
