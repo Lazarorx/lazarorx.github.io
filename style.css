@@ -212,6 +212,8 @@ nav button#menuButton {
 
 /* Estilos da seção "Sobre" */
 .about {
+    max-width: 10000px;
+    margin: 0 auto;
     padding: 100px 85px;
     display: flex;
     align-items: center;
@@ -221,11 +223,14 @@ nav button#menuButton {
 .about .left {
     background-color: #deebee;
     border-radius: 10px 10px 0 0;
+    height: 100%;
 }
 
 .about .left img {
-    max-width: 440px;
+    max-width: 100%;
     height: auto;
+    object-fit: cover;
+    max-height: 500px;
 }
 
 .about .right p {
